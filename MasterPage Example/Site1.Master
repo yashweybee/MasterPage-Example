@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="MasterPage_Example.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <link href="<%= Page.ResolveUrl("~/MasterStyles.css") %>" rel="stylesheet" />
+
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+
+        .auto-style2 {
+            height: 482px;
+        }
+
+        .auto-style3 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .auto-style4 {
+            width: 375px;
+        }
+
+        .auto-style5 {
+            height: 23px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style5" style="background-color: #0066CC; color: #FFFFFF">This is Header section
+                        <asp:Button ID="btnMaster" runat="server" OnClick="btnMaster_Click" Text="Button" />
+                        &nbsp;<asp:Label ID="lblMaster" runat="server" Text="Label"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">
+                        <table class="auto-style3">
+                            <tr>
+                                <td class="auto-style4" style="text-align: center; vertical-align: top"><strong>Course List<br />
+                                    <br />
+                                </strong><strong>
+                                    <a href="<%= Page.ResolveUrl("~/Course1.aspx") %>">Course1</a></strong><br />
+                                    <a href="<%= Page.ResolveUrl("~/Course2.aspx") %>">Course2</a><br />
+                                    <a href="<%= Page.ResolveUrl("~/Course3.aspx") %>">Course3</a><br />
+                                    <a href="<%= Page.ResolveUrl("~/UpcomingCourse.aspx") %>">UpcomingCourse</a><br />
+                                    <br />
+                                    <a href="Admin/adminPage.aspx">adminPage.aspx</a><br />
+                                    <br />
+                                    <strong>Batch Start Date</strong><asp:ContentPlaceHolder ID="cphBatchDate" runat="server">
+                                        <p>
+                                            Not Scaduled
+                                        </p>
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                                <td style="vertical-align: top">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                        <p>
+                                            Page under Construction....
+                                        </p>
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: #FFFFFF; background-color: #0099FF">This is footer</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
